@@ -1,5 +1,6 @@
 import prisma from "@/app/lib/prisma";
 import { NextResponse, NextRequest } from "next/server";
+import * as yup from "yup"
 
 export async function GET(request: Request) {
 
@@ -21,4 +22,23 @@ export async function GET(request: Request) {
   });
 
   return NextResponse.json(toDos);
+}
+
+const postSchema = yup.object({
+  description: yup.string().required(),
+  complete: yup.boolean().optional().default(false)
+})
+
+export async function POST(request: Request) {
+
+  try {
+    const { complete, description } = await postSchema.validate(await request.json())
+
+    const toDo = await prisma.toDo.create({ data: { complete, description } })
+
+    return NextResponse.json(toDo)
+  } catch (error) {
+    return NextResponse.json(error, { status: 400 })
+  }
+
 }
