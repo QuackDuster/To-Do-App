@@ -5,6 +5,7 @@ import { ToDoItem } from "./ToDoItem";
 
 import * as toDosapi from '@/todos/helpers/toDos';
 import { useRouter } from "next/navigation";
+import { toggleToDo } from "../actions/todo-actions";
 
 interface Props {
     toDos?: ToDo[];
@@ -15,11 +16,11 @@ export const ToDosGrid = ({ toDos = [] }: Props) => {
 
   const router = useRouter();
 
-const toggleToDo = async (id: string, complete: boolean) => {
-  const updatedToDo = await toDosapi.updateToDo(id, complete);
-  console.log({ updatedToDo });
-  router.refresh();
-}
+  // const toggleToDo = async (id: string, complete: boolean) => {
+  //   const updatedToDo = await toDosapi.updateToDo(id, complete);
+  //   console.log({ updatedToDo });
+  //   router.refresh();
+  // }
 
   return (
     <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">

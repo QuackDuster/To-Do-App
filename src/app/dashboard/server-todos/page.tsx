@@ -5,20 +5,24 @@ import prisma from "@/app/lib/prisma";
 import { NewToDo, ToDosGrid } from "@/todos";
 
 export const metadata = {
- title: 'To-Dos List',
+ title: 'Server Actions ToDos List',
  description: 'SEO Title',
 };
 
-export default async function RestTodosPage() {
+export default async function ServerTodosPage() {
 
   const ToDos = await prisma.toDo.findMany({ orderBy: { id: 'asc' } });
+
   return (
-    <div>
-      <div className="w-full px-3 mx-5 mb-5" >
-      <NewToDo />
+    <>
+      <div className="grid gap-2">
+        <span className="text-3xl">Server Actions</span>
+        <div className="w-full mb-5" >
+          <NewToDo />
+        </div>
       </div>
 
       <ToDosGrid toDos={ToDos} />
-    </div>
+    </>
   );
 }
