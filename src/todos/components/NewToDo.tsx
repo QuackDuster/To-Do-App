@@ -2,7 +2,7 @@
 
 import { FormEvent, useState } from "react";
 import { IoTrashOutline } from "react-icons/io5";
-// import * as todosApi from "@/todos/helpers/toDos";
+import * as todosApi from "@/todos/helpers/toDos";
 import { useRouter } from "next/navigation";
 import { addToDo, deleteCompleted } from "../actions/todo-actions";
 
@@ -16,7 +16,11 @@ export const NewToDo = () => {
     e.preventDefault();
     if (!description) return;
 
-    await addToDo(description);
+    // await addToDo(description, user.id); look how to do it with server actions
+
+    await todosApi.createToDo(description);
+    router.refresh();
+
     setDescription("");
   };
 

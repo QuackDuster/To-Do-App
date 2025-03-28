@@ -27,6 +27,10 @@ npx prisma generate
 
 7. Execute the seed to [create the local DB](localhost:3000/api/seed)
 
+## Note: Default user to test faster without create an account
+__User__: test1@google.com
+__Password__: 123456
+
 ## Prisma Commands
 ```
 npx prisma init
