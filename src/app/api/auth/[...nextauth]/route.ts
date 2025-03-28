@@ -50,10 +50,12 @@ export const authOptions:NextAuthOptions = {
     strategy: "jwt",
   },
 
+  pages: {
+    signIn: "/auth/signin",
+  },
+
   callbacks: {
     async signIn({user, account, profile, email, credentials}) {
-
-
       return true;
     },
 
@@ -83,7 +85,6 @@ export const authOptions:NextAuthOptions = {
       return session;
     }
   }
-
 }
 
 const handler = NextAuth(authOptions)

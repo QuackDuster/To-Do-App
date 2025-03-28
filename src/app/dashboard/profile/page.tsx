@@ -16,11 +16,11 @@ export default function ProfilePage() {
       <h1>Profile Page</h1>
       <hr/>
         <div className='flex flex-col'>
-            <span>{session?.user?.name ?? 'No name'}</span>
-            <span>{session?.user?.email ?? 'No email'}</span>
-            <span>{session?.user?.image ?? 'No image'}</span>
-            <span>{session?.user?.id ?? 'No UUID'}</span>
-            <span>{session?.user?.roles?.join(',') ?? ['no-roles']}</span>
+            <span>Name: {session?.user?.name ?? 'No name'}</span>
+            <span>E-mail: {session?.user?.email ?? 'No email'}</span>
+            <span>Image: {session?.user?.image ?? 'No image'}</span>
+            <span>UUID: {session?.user?.id ?? 'No UUID'}</span>
+            <span>Roles: {session?.user?.roles?.join(',') ?? ['no-roles']}</span>
         </div>
     </div>
   );

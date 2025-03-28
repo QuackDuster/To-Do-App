@@ -36,14 +36,14 @@ export const NewToDo = () => {
         onChange={(e) => setDescription(e.target.value)}
         value={description}
         className="w-6/12 pl-3 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-sky-500 transition-all"
-        placeholder="¿Qué necesita ser hecho?"
+        placeholder="What do you need to complete?"
       />
 
       <button
         type="submit"
         className="flex items-center justify-center rounded ml-2 bg-sky-500 p-2 text-white hover:bg-sky-700 transition-all"
       >
-        Crear
+        Create
       </button>
 
       <span className="flex flex-1"></span>
