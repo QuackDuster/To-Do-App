@@ -16,13 +16,11 @@ export default async function DashboardPage() {
     <>
       <div className="grid gap-6 grid-cols-1">
         <WidgetItem title="User connected SS" >
-          <div className="flex flex-col">
-            <span>{session.user?.name}</span>
-            <span>{session.user?.image}</span>
-            <span>{session.user?.email}</span>
+          <div className="flex flex-col justify-center items-center text-center">
+            <span>Welcome back!</span>
 
-            <div>
-              {JSON.stringify(session)}
+            <div className="flex flex-col gap-2 mt-2">
+              <span className="text-xl font-medium text-gray-700">{session.user?.name ?? 'No Name'}</span>
             </div>
           </div>
         </WidgetItem>

@@ -16,12 +16,12 @@ const menuItems = [
   },
   {
     icon: <IoCheckboxOutline />,
-    title: 'Rest TODOS',
+    title: 'Rest To-Do\'s',
     path: '/dashboard/rest-todos'
   },
   {
     icon: <IoListOutline />,
-    title: 'Server Actions',
+    title: 'SA To-Do\'s',
     path: '/dashboard/server-todos'
   },
   {
