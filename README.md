@@ -1,7 +1,10 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# TO-DO App with User sessions
+Basic TO-DO's or Tasks application to take note of task or reminders to complete
+
+## Stack of technologies used
+- NextJS, Redux Toolkit, Prisma, PostgreSQL, Docker, Vercel
 
 # Getting Started
-
 ## Development
 Steps to run the app in development mode
 
